@@ -1,29 +1,7 @@
 <template>
 	<div class="dashboard-editor-container">
-		<github></github>
-		<el-row class="btn-group">
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn blue-btn" to="/components/index">Components</router-link>
-			</el-col>
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn light-blue-btn" to="/charts/index">Charts</router-link>
-			</el-col>
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn pink-btn" to="/excel/download">Excel</router-link>
-			</el-col>
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn green-btn" to="/example/table/table">Table</router-link>
-			</el-col>
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn tiffany-btn" to="/example/form/edit">Form</router-link>
-			</el-col>
-			<el-col :span="4" class='text-center'>
-				<router-link class="pan-btn yellow-btn" to="/theme/index">Theme</router-link>
-			</el-col>
-		</el-row>
-
 		<el-row>
-			<el-col :span="6">
+			<el-col v-show="false" :span="6">
 				<el-card class="box-card">
 					<div slot="header" class="box-card-header">
 						<pan-thumb class="panThumb" :image="avatar"> 你的权限:
@@ -43,22 +21,11 @@
 					</div>
 				</el-card>
 			</el-col>
-
-			<el-col :span="8">
-				<pie-chart></pie-chart>
-			</el-col>
-
-			<el-col :span="10">
-				<bar-chart></bar-chart>
-			</el-col>
 		</el-row>
 
-		<el-row :gutter="20">
-			<el-col :span="15">
-				<line-chart></line-chart>
-			</el-col>
-			<el-col :span="9">
-				<todo-list></todo-list>
+		<el-row v-for="cp in cps" :key="cp" :gutter="24">
+			<el-col :span="24">
+				<component :is="cp" height="600px"></component>
 			</el-col>
 		</el-row>
 
@@ -70,20 +37,34 @@ import { mapGetters } from 'vuex'
 import countTo from 'vue-count-to'
 import panThumb from '@/components/PanThumb'
 import todoList from '@/components/TodoList'
-import Github from '@/components/Github'
-import pieChart from './pieChart'
-import barChart from './barChart'
-import lineChart from './lineChart'
+
+import qiantaobingChart from './qiantaobingChart'
+import xiaoliangjizengzhanglvChart from './xiaoliangjizengzhanglvChart'
+import fenbuChart from './fenbuChart'
+import ditudianzhengChart from './ditudianzhengChart'
+import guochengChart from './guochengChart'
+import fencengzhuzhuangChart from './fencengzhuzhuangChart'
+
+import fenxingqifendianzhongChart from './fenxingqifendianzhongChart'
+import zhexianChart from './zhexianChart'
 
 export default {
   name: 'dashboard-admin',
-  components: { countTo, panThumb, todoList, Github, pieChart, lineChart, barChart },
+  components: {
+    countTo, panThumb, todoList,
+    qiantaobingChart, xiaoliangjizengzhanglvChart, fenbuChart, ditudianzhengChart, guochengChart, fencengzhuzhuangChart,
+    fenxingqifendianzhongChart, zhexianChart
+  },
   data() {
     return {
       statisticsData: {
         article_count: 1024,
         pageviews_count: 1024
-      }
+      },
+      cps: [
+        'qiantaobingChart', 'xiaoliangjizengzhanglvChart', 'guochengChart', 'fencengzhuzhuangChart',
+        'fenxingqifendianzhongChart', 'zhexianChart'
+      ]
     }
   },
   computed: {

@@ -9,7 +9,9 @@ var webpack = require('webpack');
 var config = require('../config');
 var webpackConfig = require('./webpack.prod.conf');
 
-var spinner = ora('building for ' + process.env.NODE_ENV + ' of ' + process.env.env_config+ ' mode...' )
+console.log(process.env.NODE_ENV)
+
+var spinner = ora('building for ' + process.env.NODE_ENV + '...')
 spinner.start()
 
 

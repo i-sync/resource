@@ -1,5 +1,5 @@
 <template>
-  <div class="components-container" style='height:100vh'>
+  <div class="components-container" style='height:100vh;'>
     <div class='chart-container'>
       <line-marker height='100%' width='100%'></line-marker>
     </div>

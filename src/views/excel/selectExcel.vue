@@ -9,22 +9,22 @@
           {{scope.$index}}
         </template>
       </el-table-column>
-      <el-table-column label="文章标题">
+      <el-table-column label="工作负责内容">
         <template scope="scope">
           {{scope.row.title}}
         </template>
       </el-table-column>
-      <el-table-column label="作者" width="95" align="center">
+      <el-table-column label="员工" width="95" align="center">
         <template scope="scope">
           <el-tag>{{scope.row.author}}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column label="阅读数" width="115" align="center">
+      <el-table-column label="工作评价" width="115" align="center">
         <template scope="scope">
           {{scope.row.pageviews}}
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="发布时间" width="220">
+      <el-table-column align="center" prop="created_at" label="入职时间" width="220">
         <template scope="scope">
           <i class="el-icon-time"></i>
           <span>{{scope.row.display_time}}</span>
