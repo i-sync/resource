@@ -4,6 +4,11 @@
 
  **该项目不支持低版本游览器(如ie)，有需求请自行添加polyfill [详情](https://github.com/PanJiaChen/vue-element-admin/wiki#babel-polyfill)**
 
+## demo
+![d1](./static/d1.png)
+![d2](./static/d2.png)
+![d3](./static/d3.png)
+
 ## 开发
 ```bash
     # 克隆项目
