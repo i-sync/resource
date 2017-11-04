@@ -1,7 +1,8 @@
 <template>
   <div class="login-container">
     <el-form class="card-box login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
-      <h3 class="title">登录</h3>
+
+      <h3 class="title">人力资源管理系统<br /><br />登录</h3>
 
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
@@ -21,9 +22,9 @@
 
       <el-button type="primary" style="width:100%;margin-bottom:30px;" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
 
-      <div class='tips'>账号:admin 密码随便</div>
+      <!--div class='tips'>账号:admin 密码随便</div>
       <div class='tips'>衍生自 https://github.com/PanJiaChen/vue-element-admin，非常感谢</div>
-
+      -->
     </el-form>
 
   </div>

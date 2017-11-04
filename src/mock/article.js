@@ -15,8 +15,15 @@ for (let i = 0; i < count; i++) {
     importance: '@integer(1, 3)',
     'type|1': ['CN', 'US', 'JP', 'EU'],
     'status|1': ['良好', '凑合', '有潜力'],
-    display_time: '@datetime',
-    pageviews: '@ctitle(10, 20)'
+    display_time: '@date',
+    pageviews: '@ctitle(10, 20)',
+    eid: /E0002\d{4}/,
+    'sex|1': ['男', '女'],
+    'department|1': ['行政部门', '财务部门', '质量管理部门', '营销部门', '营运部门', '技术部门', '维修部门', '人力资源部门', '客户服务部门'],
+    zip: Mock.Random.zip(),
+    address: Mock.Random.county(true),
+    phone: /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/,
+    identity: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9]$/
   }))
 }
 

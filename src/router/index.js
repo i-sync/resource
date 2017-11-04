@@ -46,22 +46,14 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
-    path: '/resume',
-    component: Layout,
-    redirect: '/resume/index',
-    name: '简历筛选',
-    icon: 'trendChart2',
-    meta: { role: ['admin'] },
-    noDropdown: true,
-    children: [{ path: 'screening', component: _import('screening/table/dynamictable/index'), name: '简历筛选', meta: { role: ['admin'] }}]
-  },
-  {
     path: '/interview',
     component: Layout,
     redirect: '/interview/index',
-    name: '面试',
+    name: '人才规则',
     icon: 'people',
+    meta: { role: ['admin'] },
     children: [
+      { path: 'invitation1', icon: 'tab', component: _import('screening/table/dynamictable/index'), name: '简历筛选' },
       { path: 'invitation', icon: 'tab', component: _import('interview/tab/index'), name: '面试邀请' },
       { path: 'result', icon: 'excel', component: _import('interview/table/dragTable'), name: '面试结果' },
       { path: 'hire', icon: 'excel', component: _import('interview/table/inlineEditTable'), name: '录用情况' }
@@ -71,29 +63,29 @@ export const asyncRouterMap = [
     path: '/staff',
     component: Layout,
     redirect: '/staff/index',
-    name: '员工',
+    name: '员工管理',
     icon: 'user',
     children: [
       { path: 'trial', component: _import('components/trial'), name: '试用期' },
-      { path: 'official', component: _import('excel/selectExcel'), name: '正式员工' }
+      { path: 'official', component: _import('staff/index'), name: '正式员工' }
     ]
   },
   {
     path: '/week',
     component: Layout,
     redirect: '/excel/download',
-    name: '周报',
+    name: '绩效管理',
     icon: 'trendChart3',
     children: [
-      { path: 'replenish', icon: 'form', component: _import('week/form'), name: '补填周报' },
-      { path: 'statistics', component: _import('week/table/table'), name: '概况' }
+      { path: 'statistics', component: _import('week/table/table'), name: '概况' },
+      { path: 'replenish', icon: 'form', component: _import('week/form'), name: '周报' }
     ]
   },
   {
     path: '/askaleave',
     component: Layout,
     redirect: '/excel/download',
-    name: '请假',
+    name: '薪资福利',
     icon: 'bug',
     children: [
       { path: 'edit', icon: 'form', component: _import('askaleave/form'), name: '写请假单', meta: { isEdit: true }},
@@ -104,11 +96,22 @@ export const asyncRouterMap = [
     path: '/vacate',
     component: Layout,
     redirect: 'noredirect',
-    name: '离职',
+    name: '合同管理',
     icon: 'eye',
     children: [
       { path: 'bye', component: _import('vacate/form'), name: '离职申请' },
       { path: 'seeyouagain', component: _import('vacate/table/table'), name: '确认离职' }
+    ]
+  },
+  {
+    path: '/manage',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '系统管理',
+    icon: 'star',
+    children: [
+      { path: 'organization', component: _import('manage/organization'), name: '机构管理' },
+      { path: 'poast', component: _import('manage/post'), name: '岗位管理' }
     ]
   },
   {

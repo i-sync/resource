@@ -88,7 +88,7 @@ export default {
           itemHeight: 14,
           align: 'left',
 
-          data: ['董事长', '总经理', '秘书', '会计', '出纳', '经理', '程序员'],
+          data: ['销售', '总经理', '秘书', '会计', '出纳', '经理', '程序员'],
           textStyle: {
             color: '#fff'
           }
@@ -151,7 +151,7 @@ export default {
           },
           data: [{
             value: 435,
-            name: '董事长'
+            name: '销售'
           }, {
             value: 679,
             name: '总经理'
