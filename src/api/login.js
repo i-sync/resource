@@ -5,6 +5,7 @@ export function loginByUsername(username, password) {
     username,
     password
   }
+  console.log('2.' + data.username)
   return fetch({
     url: '/login/login',
     method: 'post',

@@ -23,7 +23,7 @@ export default {
     ])
   },
   created() {
-    if (this.roles.indexOf('admin') >= 0) {
+    if (this.roles && this.roles.indexOf('admin') >= 0) {
       return
     }
     this.currentRole = 'editorDashboard'

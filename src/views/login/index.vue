@@ -45,8 +45,8 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('密码不能小于6位'))
+      if (value.length < 5) {
+        callback(new Error('密码不能小于5位'))
       } else {
         callback()
       }
@@ -81,8 +81,9 @@ export default {
             this.loading = false
             this.$router.push({ path: '/' })
                 // this.showDialog = true
-          }).catch(() => {
+          }).catch(msg => {
             this.loading = false
+            console.log(msg)
           })
         } else {
           console.log('error submit!!')

@@ -28,14 +28,14 @@ export default {
   loginByUsername: config => {
     console.log(config)
     const { username } = JSON.parse(config.body)
-    // const { password } = JSON.parse(config.body)
+    const { password } = JSON.parse(config.body)
     var user = userMap[username]
-    return user
-    /* if (user.token === password) {
+    // return user
+    if (user.token === password) {
       return user
     } else {
       return Promise.reject('the username or password is invalid...')
-    } */
+    }
   },
   getUserInfo: config => {
     const { token } = param2Obj(config.url)
